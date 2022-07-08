@@ -1,0 +1,22 @@
+# docker-composeのバージョン
+# https://docs.docker.jp/compose/compose-file/compose-file-v3.html
+version: '3.8'
+
+services:
+  react-app:
+    # 環境構築
+    # dockerfileを指定して「Dockerfile」にて環境構築を実施
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # バインドマウント、ホスト側のファイルやディレクトリをコンテナ側にマウント
+    volumes:
+      - ./:/src
+    # 起動時コマンド
+    command: sh -c "npm install && npm run start"
+    # ホスト側とコンテナ側の両方のポートを指定(ホスト側 : コンテナ側)
+    # ポートを1つのみ指定した場合は、ホスト側にランダムなポート番号が割り当てられる
+    ports:
+      - "3000:3000"
+    # 標準入出力とエラー出力をコンテナに結びつける
+    stdin_open: true
