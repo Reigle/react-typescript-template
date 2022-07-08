@@ -7,6 +7,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    'prettier',
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -36,10 +37,12 @@ module.exports = {
       "version": "detect"
     },
   },
+  // eslintの対象外ファイル
   "ignorePatterns": [
     "**/public/*",
     "**/node_modules/*",
     "**/.vscode/*",
     ".eslintrc.js",
+    ".prettierrc.js",
   ],
 }
