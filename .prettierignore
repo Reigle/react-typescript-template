@@ -6,3 +6,4 @@ build
 .eslintrc.js
 .prettierrc.js
 **/*.md
+webpack.config.js

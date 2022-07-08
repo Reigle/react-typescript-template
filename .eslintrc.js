@@ -44,5 +44,6 @@ module.exports = {
     "**/.vscode/*",
     ".eslintrc.js",
     ".prettierrc.js",
+    "webpack.config.js",
   ],
 }
